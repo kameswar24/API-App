@@ -1,4 +1,4 @@
-const School = require ('../models/school')
+const School = require ('../models/student')
 
 exports.list = async (req,res)=>{
     var data = await School.find()

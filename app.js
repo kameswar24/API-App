@@ -10,6 +10,7 @@ app.use(bodyparser.json())
 const school = require ('./routes/school')
 const Quiz = require ('./routes/quiz')
 const Payment = require ('./routes/payment')
+const student = require ('./routes/student')
 // mongodb uri
 const dbURI=`mongodb+srv://kameswar:${password}@cluster0.2ltyf.mongodb.net/Data?retryWrites=true&w=majority`
 
@@ -25,11 +26,11 @@ mongoose.connect(dbURI,options).then(()=>{
 })
  
 // basic root to call api
-app.use('/school',school)
+app.use('/api/school',school)
+app.use('/api/student',student)
+app.use('/api/quiz',Quiz)
 
-app.use('/quiz',Quiz)
-
-app.use('/payment',Payment)
+app.use('/api/payment',Payment)
 
 app.get('/', (req, res) => {
     res.json({ message: "Server is running" })
