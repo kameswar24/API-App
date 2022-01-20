@@ -4,8 +4,6 @@ exports.StudentData = async (req, res) => {
     try {
         var data = await Student.find()
         res.send({
-            message: "success",
-            status: 200,
             data: data
         })
     } catch (error) {
