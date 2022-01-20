@@ -35,7 +35,7 @@ exports.StudentDataUpdate = async (req, res) => {
 exports.StudentLogin = async (req,res)=>{
     try {
         var { userName,password } = req.body
-   await Student.findOne({$or:[{'email':userName}, {'phone':userName}]}).exec((err, suc) => {
+   await Student.findOne({$or:[{'userName':userName}, {'userName':userName}]}).exec((err, suc) => {
           if(err){
             return res.json({
                 status: 400,
