@@ -49,7 +49,8 @@ exports.StudentLogin = async (req,res)=>{
                 return res.json({
                     status: 302,
                     code: 'user_not_exists',
-                    message: "Email doesn't exists."
+                    message: "Email doesn't exists.",
+                    status:suc
                 })
     
             } else {
